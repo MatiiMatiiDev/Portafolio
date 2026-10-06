@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es-AR">
+  <!-- CONFIGURACIÓN: idioma, codificación, vista móvil, descripción SEO y título de la pestaña. styles.css contiene la base; tech.css se carga después y ajusta la identidad visual. defer ejecuta JavaScript cuando el HTML ya está disponible. -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#0b101b">
+    <meta name="description" content="Matías Pérez: diseño de páginas web y tiendas online para emprendimientos. Conocé mis trabajos y encontrá una propuesta para tu negocio.">
+    <title>Matías Pérez Dev — Webs que hacen crecer tu idea</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tech.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- ACCESIBILIDAD: al navegar con Tab aparece este enlace para saltar directamente al contenido. -->
+    <a class="skip" href="#inicio">Ir al contenido</a>
+    <!-- ENCABEZADO: marca, enlaces internos y botón de menú móvil. aria-expanded se actualiza desde script.js. -->
+    <header class="header"><a class="brand" href="#inicio" aria-label="Matías Pérez Dev, inicio"><span class="brand-mark">&lt;mp<span>/&gt;</span></span><span>MATÍAS PÉREZ<span class="brand-sub">DESARROLLO WEB & ECOMMERCE</span></span></a><button class="menu-toggle" aria-label="Abrir menú" aria-controls="navigation" aria-expanded="false">Menú <span>☰</span></button>
+      <nav id="navigation" aria-label="Navegación principal"><a href="#sobre-mi">Sobre mí</a><a href="#trabajos">Trabajos</a><a href="#precios">Precios</a><a class="nav-contact" href="#contacto">Hablemos <span>↗</span></a>
+      </nav>
+    </header>
+    <!-- CONTENIDO PRINCIPAL: cada sección tiene un id que permite enlazarla desde el menú. -->
+    <main>
+      <!-- INICIO / HERO: título de presentación, descripción, llamados a la acción y lugar de trabajo. Editá aquí tu presentación principal. -->
+      <section class="hero section" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot"></span> DESARROLLO WEB / ECOMMERCE
+          </p>
+          <h1>Desarrollo web.<br>Ecommerce.<br><em>Hecho para tu marca.</em>
+          </h1>
+          <p class="hero-description">Diseño y desarrollo sitios web y tiendas online que conectan tu marca con tus clientes. Una experiencia clara, desde la primera visita hasta la compra.
+          </p>
+          <div class="hero-actions"><a class="button dark" href="#contacto">Contame tu idea <span>↗</span></a><a class="text-link" href="#trabajos">Ver mis trabajos <span>↓</span></a>
+          </div>
+          <div class="hero-note"><span class="asterisk">✳</span>
+            <p>Atención directa conmigo.<br><strong>Desde CABA, para tu próximo proyecto.</strong>
+            </p>
+          </div>
+        </div>
+        <!-- ILUSTRACIÓN: editor de código y tienda dibujados con HTML y CSS. Son elementos decorativos, no un editor ni un carrito funcional. Su diseño está en tech.css. -->
+        <div class="dev-scene" role="img" aria-label="Ilustración de un editor de código junto a un ejemplo de tienda online">
+          <div class="scene-grid">
+          </div>
+          <div class="editor-window">
+            <div class="editor-top"><span class="window-dots"><i></i><i></i><i></i></span><span>store.js</span><span class="editor-language">JAVASCRIPT</span>
+            </div>
+            <div class="editor-body" aria-hidden="true">
+              <div class="code-line"><span class="line-number">01</span><span><b class="code-purple">const</b> <b class="code-blue">tuProyecto</b> = {</span>
+              </div>
+              <div class="code-line"><span class="line-number">02</span><span>&nbsp; marca: <b class="code-green">"Tu negocio"</b>,</span>
+              </div>
+              <div class="code-line"><span class="line-number">03</span><span>&nbsp; diseño: <b class="code-green">"A tu medida"</b>,</span>
+              </div>
+              <div class="code-line"><span class="line-number">04</span><span>&nbsp; experiencia: <b class="code-green">"Simple"</b>,</span>
+              </div>
+              <div class="code-line"><span class="line-number">05</span><span>&nbsp; ecommerce: <b class="code-purple">true</b></span>
+              </div>
+              <div class="code-line"><span class="line-number">06</span><span>};</span>
+              </div>
+              <div class="code-line last-line"><span class="line-number">07</span><span><b class="code-blue">crearWeb</b>(tuProyecto);<i class="code-cursor"></i></span>
+              </div>
+            </div>
+            <div class="editor-status"><span>● &nbsp; Tu idea, en desarrollo</span><span>HTML · CSS · JS</span>
+            </div>
+          </div>
+          <div class="store-window">
+            <div class="store-header"><b>STUDIO<span> / STORE</span></b><span class="cart-icon">▱ <small>1</small></span>
+            </div>
+            <div class="store-product">
+              <div class="headphones"><i class="headband"></i><i class="ear ear-left"></i><i class="ear ear-right"></i>
+              </div><span class="product-tag">TU TIENDA ONLINE</span>
+            </div>
+            <div class="store-product-info">
+              <div><small>DISEÑO. STOCK. PEDIDOS.</small>
+                <h3>Todo en un solo lugar.
+                </h3>
+              </div><span class="sample-buy">Comprar <b>↗</b></span>
+            </div>
+          </div>
+          <div class="dev-badge"><span>&lt;/&gt;</span>
+            <p>De la idea<br><strong>a la web.</strong>
+            </p>
+          </div>
+          <p class="scene-caption">DISEÑO + CÓDIGO + EXPERIENCIA DE COMPRA
+          </p>
+        </div>
+      </section>
+      <!-- TECNOLOGÍAS: franja con herramientas y servicios que ofrecés. -->
+      <div class="service-strip"><span>HTML · CSS · JAVASCRIPT</span><i>&lt;/&gt;</i><span>WORDPRESS & WOOCOMMERCE</span><i>+</i><span>WEBS RESPONSIVE</span><i>+</i><span>CONTACTO DIRECTO</span>
+      </div>
+      <!-- SOBRE MÍ: presentación personal, experiencia y etiquetas de especialidades. -->
+      <section class="section about" id="sobre-mi">
+        <div>
+          <p class="eyebrow">01 / LA PERSONA DETRÁS
+          </p>
+          <h2>Hola, soy Matías.<br><em>Hagamos que tu idea<br>tenga su lugar.</em>
+          </h2>
+        </div>
+        <div class="about-copy">
+          <p class="lead">Me dedico al desarrollo y diseño web, con foco en emprendimientos y negocios que quieren dar su próximo paso en internet.
+          </p>
+          <p>Combino diseño, desarrollo y una mirada práctica sobre cómo atienden y venden los negocios. Mi experiencia en atención al cliente y ventas me ayuda a pensar cada web desde las necesidades de quienes la van a usar.
+          </p>
+          <p>Trabajo con WordPress, WooCommerce y también con HTML, CSS y JavaScript. Te acompaño desde la primera idea hasta la puesta en marcha, con una propuesta clara y un alcance definido.
+          </p>
+          <div class="about-tags"><span>Diseño web</span><span>Ecommerce</span><span>WordPress</span><span>Desarrollo frontend</span>
+          </div>
+        </div>
+      </section>
+      <!-- TRABAJOS: las tarjetas usan capturas reales en assets/. data-project vincula cada tarjeta con los datos y la ventana de detalle en script.js. -->
+      <section class="section projects" id="trabajos">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / TRABAJOS SELECCIONADOS
+            </p>
+            <h2>Ideas que ya<br><em>tomaron forma.</em>
+            </h2>
+          </div>
+          <p>Cada marca tiene algo propio.<br>La web también debería tenerlo.
+          </p>
+        </div>
+        <div class="project-grid">
+          <!-- PROYECTO 1: Boticario del Alma. Cambiá la imagen, el texto alternativo y el contenido al reemplazar este trabajo. -->
+          <button class="project-card" data-project="boticario">
+          <div class="project-visual project-screenshot">
+            <div class="capture-bar" aria-hidden="true"><span>● ● ●</span><small>Boticario del Alma</small>
+            </div><img src="assets/boticario-real.jpg" alt="Captura real del inicio de Boticario del Alma" width="1348" height="926" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div><span class="project-type">ECOMMERCE / WORDPRESS</span>
+              <h3>Boticario del Alma
+              </h3>
+              <p>Rediseño de una experiencia de compra<br>con una identidad botánica y sensorial.
+              </p>
+            </div><span class="project-arrow">↗</span>
+          </div></button>
+          <!-- PROYECTO 2: Mar de Posibilidades. loading="lazy" posterga la carga de la imagen hasta que se necesita. -->
+          <button class="project-card" data-project="mar">
+          <div class="project-visual project-screenshot">
+            <div class="capture-bar" aria-hidden="true"><span>● ● ●</span><small>mardeposibilidades.ar</small>
+            </div><img src="assets/mar-real.jpg" alt="Captura real del inicio de Mar de Posibilidades" width="1348" height="926" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div><span class="project-type">LANDING / SERVICIOS</span>
+              <h3>Mar de Posibilidades
+              </h3>
+              <p>Presentación personal, servicios y contacto<br>en una página simple y cercana.
+              </p>
+            </div><span class="project-arrow">↗</span>
+          </div></button>
+        </div>
+        <div class="concept-note"><span>✳</span>
+          <p>¿Tu marca todavía no tiene web?<br><strong>Tu proyecto puede ser el próximo.</strong>
+          </p><a href="#contacto" class="text-link">Lo conversamos <span>↗</span></a>
+        </div>
+      </section>
+      <!-- PROCESO: cuatro pasos que explican cómo acompañás a cada cliente. -->
+      <section class="process section">
+        <p class="eyebrow">03 / CÓMO TRABAJAMOS
+        </p>
+        <div class="section-heading">
+          <h2>Claro desde<br><em>el primer paso.</em>
+          </h2>
+          <p>Sabés qué vamos a hacer,<br>cómo y con qué alcance.
+          </p>
+        </div>
+        <div class="process-grid">
+          <article><span>01</span>
+            <h3>Conocemos tu negocio
+            </h3>
+            <p>Conversamos sobre tu marca, tus clientes y qué necesitás que resuelva la web.
+            </p>
+          </article>
+          <article><span>02</span>
+            <h3>Definimos la propuesta
+            </h3>
+            <p>Recibís una propuesta con diseño, funciones, precio y tiempos de entrega.
+            </p>
+          </article>
+          <article><span>03</span>
+            <h3>Diseñamos y construimos
+            </h3>
+            <p>Le damos forma a tu web y revisamos juntos los ajustes acordados.
+            </p>
+          </article>
+          <article><span>04</span>
+            <h3>La ponemos en marcha
+            </h3>
+            <p>Revisamos su funcionamiento y te muestro cómo administrar el contenido.
+            </p>
+          </article>
+        </div>
+      </section>
+      <!-- PRECIOS: JavaScript genera las tarjetas dentro de #plan-list usando el objeto plans. Los botones data-tab eligen el grupo web o shop. -->
+      <section class="pricing section" id="precios">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">04 / UNA PROPUESTA PARA CADA ETAPA
+            </p>
+            <h2>Una web a la medida<br><em>de tu próximo paso.</em>
+            </h2>
+          </div>
+          <p>Precios iniciales en pesos argentinos.<br>El presupuesto final depende del alcance.
+          </p>
+        </div>
+        <div class="price-tabs" role="tablist" aria-label="Tipo de proyecto"><button id="tab-web" role="tab" aria-selected="true" aria-controls="plan-list" data-tab="web">Presentación y contacto</button><button id="tab-shop" role="tab" aria-selected="false" aria-controls="plan-list" tabindex="-1" data-tab="shop">Catálogos y tiendas</button>
+        </div>
+        <div class="plan-grid" id="plan-list" role="tabpanel" aria-labelledby="tab-web">
+        </div>
+        <div class="price-note"><span>✳</span>
+          <p>Todos los proyectos incluyen adaptación a celular, dos rondas de ajustes y acompañamiento de puesta en marcha. Dominio, hosting, suscripciones y comisiones de cobro se cotizan por separado.
+          </p>
+        </div>
+        <!-- PREGUNTA FRECUENTE: details y summary crean un desplegable nativo, sin JavaScript. -->
+        <details class="pricing-faq">
+          <summary>¿No sabés qué tipo de web necesitás? <span>+</span>
+          </summary>
+          <p>Si querés presentar tus servicios y recibir consultas, podemos empezar con una landing. Si vendés productos a pedido, un catálogo con WhatsApp puede alcanzar. Para vender con carrito, stock y pagos online, conviene una tienda. Lo definimos después de conocer tu negocio.
+          </p>
+        </details>
+      </section>
+      <!-- CONTACTO: #contact-channels recibe automáticamente los enlaces definidos en CONTACT dentro de script.js. -->
+      <section class="contact section" id="contacto">
+        <div class="contact-copy">
+          <p class="eyebrow">05 / EMPECEMOS POR UNA CHARLA
+          </p>
+          <h2>Tenés una idea.<br><em>Démosle forma.</em>
+          </h2>
+          <p>No necesitás tener todo resuelto.<br>Contame qué hacés y qué te gustaría lograr.
+          </p>
+          <div class="contact-channels" id="contact-channels">
+          </div>
+          <div class="contact-location"><span>↗</span>
+            <p>Buenos Aires, Argentina.<br>Proyectos y reuniones a distancia.
+            </p>
+          </div>
+        </div>
+        <!-- FORMULARIO: required, type="email" y límites de longitud validan los campos. Al enviar, JavaScript manda los campos a FormSubmit, que reenvía la consulta por email. El destinatario debe activar el servicio una vez. Esta página no guarda las consultas localmente. -->
+        <form id="contact-form" action="https://formsubmit.co/juanmatiasperez1394@gmail.com" method="POST">
+          <!-- ANTISPAM: campo invisible que debe permanecer vacío. -->
+          <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Consulta desde el portfolio de Matías Pérez">
+          <input type="hidden" name="_template" value="table">
+          <div class="form-row">
+            <label>Tu nombre<input name="name" autocomplete="name" placeholder="¿Cómo te llamás?" maxlength="100" required>
+            </label>
+            <label>Tu email<input type="email" name="email" autocomplete="email" placeholder="nombre@email.com" maxlength="160" required>
+            </label>
+          </div>
+          <label>Tu marca o emprendimiento<input name="brand" placeholder="El nombre de tu proyecto" maxlength="120">
+          </label>
+          <label>¿Qué web tenés en mente?<select name="project" id="project-select"><option value="Todavía no lo sé">Todavía no lo sé</option><option>Landing</option><option>Web institucional</option><option>Catálogo con WhatsApp</option><option>Tienda sobre plataforma</option><option>Tienda WooCommerce</option><option>Ecommerce personalizado</option></select>
+          </label>
+          <label>Contame un poco más<textarea name="message" placeholder="Qué vendés, si ya tenés web y qué te gustaría mejorar…" rows="3" minlength="10" maxlength="3000" required></textarea>
+          </label><button type="submit" class="button dark" id="submit-button">Enviar consulta por email <span>↗</span></button>
+          <p class="form-hint" id="form-hint">La consulta se envía por email a Matías. El envío se procesa mediante FormSubmit.
+          </p>
+          <!-- RESULTADO: muestra estado de envío, recepción por el servicio o error. Ante un error permite copiar y descargar el mensaje. -->
+          <div id="form-result" class="form-result" hidden>
+            <p id="result-status" role="status" aria-live="polite">
+            </p><textarea id="prepared-message" aria-label="Consulta preparada" readonly rows="7"></textarea>
+            <div class="result-actions"><button type="button" class="text-link" id="copy-message">Copiar consulta ↗</button><button type="button" class="text-link" id="download-message">Descargar consulta ↓</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <!-- FOOTER: marca, enlaces y canales de contacto. JavaScript agrega las redes configuradas y actualiza el año. -->
+    <footer>
+      <div class="footer-top"><a class="footer-brand" href="#inicio">Matías Pérez<span>Diseño web & ecommerce.</span></a>
+        <p>Tu próximo proyecto.<br><em>Diseñado y desarrollado.</em>
+        </p>
+        <div id="footer-socials" class="footer-socials"><a href="#trabajos">Trabajos ↗</a><a href="#precios">Servicios y precios ↗</a><a href="#contacto">Contacto ↗</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Matías Pérez Dev</span><span>Hecho con atención a cada detalle.</span><a href="#inicio">Volver arriba ↑</a>
+      </div>
+    </footer>
+    <!-- VENTANA DE PROYECTO: se completa al pulsar una tarjeta. showModal() abre el diálogo nativo; se cierra con X, Escape o un clic fuera. Los id dialog-* se usan desde script.js. -->
+    <dialog id="project-dialog"><button class="dialog-close" aria-label="Cerrar proyecto">✕</button>
+      <p class="eyebrow" id="dialog-type">
+      </p>
+      <h2 id="dialog-title">
+      </h2><img id="dialog-image" class="dialog-image" alt="">
+      <p id="dialog-description">
+      </p>
+      <ul id="dialog-features">
+      </ul><a class="button dark" href="#contacto" id="dialog-contact">Quiero algo para mi marca ↗</a>
+    </dialog>
+  </body>
+</html>

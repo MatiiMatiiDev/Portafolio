@@ -1,0 +1,740 @@
+/* Identidad de desarrollo web. La marca de cada trabajo conserva sus propios colores. */
+/* TIPOGRAFÍA TÉCNICA: monospace para etiquetas. Este archivo se carga después de styles.css y sus reglas tienen prioridad a igual especificidad. */
+.eyebrow,.brand-sub,.project-type,.plan-label,.process-grid article>span,.visual-label {
+  font-family:'JetBrains Mono',monospace
+}
+
+.brand-sub {
+  color:#9caec4
+}
+
+.nav-contact {
+  border-color:#44526b
+}
+
+.nav-contact:hover {
+  background:#172236;
+  border-color:#67e8f9
+}
+
+/* TÍTULO PRINCIPAL: gradiente de cian a violeta. */
+.hero {
+  gap:30px
+}
+
+.hero h1 {
+  letter-spacing:-.055em
+}
+
+.hero h1 em {
+  background:linear-gradient(100deg,#67e8f9 0%,#b6a0fc 100%);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent
+}
+
+.hero .eyebrow {
+  color:#a4c9e0
+}
+
+.hero-description {
+  font-size:14px
+}
+
+.hero-note .asterisk {
+  font-family:'JetBrains Mono',monospace;
+  font-size:29px
+}
+
+.hero-note .asterisk:after {
+  content:' /';
+  color:#a78bfa
+}
+
+/* ESCENA DECORATIVA: cuadrícula y editor posicionados dentro de un contenedor relativo. */
+.dev-scene {
+  height:500px;
+  position:relative;
+  isolation:isolate;
+  margin-left:0
+}
+
+.scene-grid {
+  position:absolute;
+  inset:0 -20px;
+  border-radius:24px;
+  background:radial-gradient(ellipse at 45% 48%,#38306650,transparent 62%),linear-gradient(#67e8f909 1px,transparent 1px),linear-gradient(90deg,#67e8f909 1px,transparent 1px);
+  background-size:auto,30px 30px,30px 30px;
+  mask-image:radial-gradient(ellipse,black 35%,transparent 74%)
+}
+
+/* EDITOR: ventana, barra superior, líneas, colores de sintaxis y estado. */
+.editor-window {
+  position:absolute;
+  top:38px;
+  left:0;
+  width:95%;
+  border:1px solid #374056;
+  border-radius:10px;
+  background:#111827;
+  overflow:hidden;
+  box-shadow:0 20px 65px #0006;
+  transform:rotate(-3deg)
+}
+
+.editor-top {
+  padding:14px 17px;
+  display:flex;
+  gap:24px;
+  align-items:center;
+  border-bottom:1px solid #2a3447;
+  background:#172033;
+  font:10px 'JetBrains Mono',monospace;
+  color:#c8d3e5
+}
+
+.window-dots {
+  display:flex;
+  gap:5px
+}
+
+.window-dots i {
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#ff7c8e
+}
+
+.window-dots i:nth-child(2) {
+  background:#f2c86e
+}
+
+.window-dots i:nth-child(3) {
+  background:#70d7b1
+}
+
+.editor-language {
+  font-size:7px;
+  color:#7f91ae;
+  margin-left:auto
+}
+
+.editor-body {
+  padding:24px 17px 33px;
+  font:12px/2.2 'JetBrains Mono',monospace;
+  color:#cfdae9;
+  white-space:nowrap
+}
+
+.code-line {
+  display:flex;
+  gap:20px
+}
+
+.line-number {
+  color:#546680;
+  font-size:10px;
+  min-width:15px
+}
+
+.code-line b {
+  font-weight:400
+}
+
+.code-purple {
+  color:#bc9fff
+}
+
+.code-blue {
+  color:#75d9fa
+}
+
+.code-green {
+  color:#95e5bf
+}
+
+.last-line {
+  padding-top:10px
+}
+
+.code-cursor {
+  display:inline-block;
+  height:14px;
+  width:6px;
+  background:#67e8f9;
+  margin-left:6px;
+  vertical-align:middle
+}
+
+.editor-status {
+  display:flex;
+  justify-content:space-between;
+  padding:8px 16px;
+  background:#1d2840;
+  font:7px 'JetBrains Mono',monospace;
+  color:#9fcbe6
+}
+
+.editor-status>span:first-child {
+  color:#89e8bf
+}
+
+/* TIENDA DE EJEMPLO: ventana superpuesta y producto. Los auriculares se dibujan con CSS. */
+.store-window {
+  position:absolute;
+  right:-8px;
+  bottom:40px;
+  width:62%;
+  max-width:335px;
+  border:1px solid #536382;
+  border-radius:11px;
+  background:#f2f5fa;
+  box-shadow:-15px 20px 45px #0006;
+  overflow:hidden;
+  transform:rotate(3deg);
+  color:#121c2e
+}
+
+.store-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 17px;
+  font-size:9px;
+  border-bottom:1px solid #dce3ed
+}
+
+.store-header b {
+  letter-spacing:.04em
+}
+
+.store-header b>span {
+  color:#738198;
+  font-weight:400
+}
+
+.cart-icon {
+  font-size:17px;
+  display:flex;
+  gap:3px;
+  align-items:center
+}
+
+.cart-icon small {
+  font-size:7px;
+  background:#172a43;
+  color:white;
+  width:13px;
+  height:13px;
+  border-radius:50%;
+  display:grid;
+  place-items:center
+}
+
+.store-product {
+  height:165px;
+  background:radial-gradient(ellipse at 50% 35%,#d3dafa,#e4e9f2);
+  position:relative;
+  display:grid;
+  place-items:center
+}
+
+.product-tag {
+  position:absolute;
+  bottom:10px;
+  left:16px;
+  font:6px 'JetBrains Mono',monospace;
+  letter-spacing:.12em;
+  color:#667994
+}
+
+.headphones {
+  position:relative;
+  width:105px;
+  height:106px;
+  transform:rotate(-12deg);
+  filter:drop-shadow(5px 10px 7px #38446235)
+}
+
+.headband {
+  position:absolute;
+  top:0;
+  left:10px;
+  border:11px solid #172339;
+  border-bottom:0;
+  border-radius:60px 60px 0 0;
+  width:85px;
+  height:72px;
+  box-shadow:inset 0 5px 0 #526078
+}
+
+.ear {
+  position:absolute;
+  top:56px;
+  height:47px;
+  width:27px;
+  background:linear-gradient(90deg,#111c30,#344561);
+  border:2px solid #17253c;
+  border-radius:9px;
+  box-shadow:inset -4px 0 #425475
+}
+
+.ear-left {
+  left:5px
+}
+
+.ear-right {
+  right:5px;
+  transform:scaleX(-1)
+}
+
+.store-product-info {
+  padding:17px;
+  display:flex;
+  flex-direction:column;
+  gap:15px
+}
+
+.store-product-info small {
+  font:6px 'JetBrains Mono',monospace;
+  color:#70809a
+}
+
+.store-product-info h3 {
+  font-size:17px;
+  margin-top:6px;
+  letter-spacing:-.04em
+}
+
+.sample-buy {
+  display:flex;
+  justify-content:space-between;
+  background:#162e47;
+  color:#fff;
+  padding:9px 12px;
+  border-radius:4px;
+  font-size:8px
+}
+
+.sample-buy b {
+  font-size:12px
+}
+
+/* INSIGNIA: etiqueta decorativa de desarrollo web. */
+.dev-badge {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  position:absolute;
+  bottom:9px;
+  left:4px;
+  background:#121e30;
+  padding:13px 18px;
+  border:1px solid #354b64;
+  border-radius:7px;
+  box-shadow:0 10px 30px #0004;
+  transform:rotate(-3deg)
+}
+
+.dev-badge>span {
+  color:#67e8f9;
+  font:22px 'JetBrains Mono',monospace
+}
+
+.dev-badge p {
+  font-size:9px;
+  line-height:1.6;
+  color:#a9b7ca
+}
+
+.dev-badge strong {
+  font-size:11px;
+  color:#eef3fa
+}
+
+.scene-caption {
+  position:absolute;
+  bottom:-23px;
+  left:0;
+  font:7px 'JetBrains Mono',monospace;
+  color:#6f859f;
+  letter-spacing:.09em
+}
+
+/* ESTILOS HEREDADOS: utilizados por las vistas ilustrativas anteriores, sin presencia en las tarjetas actuales. */
+.project-bottle .cap {
+  position:absolute;
+  left:5%;
+  width:90%;
+  background:repeating-linear-gradient(90deg,#252423 0 2px,#383530 2px 3px);
+  border-radius:6px 6px 1px 1px
+}
+
+.visual-mar em {
+  font-family:Georgia,serif;
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:-.05em
+}
+
+.visual-mar .visual-label {
+  color:#eddfb3
+}
+
+.visual-boticario .visual-label {
+  color:#4c4337
+}
+
+/* AJUSTES: colores de los planes, hover y campos del formulario. */
+.plan-label {
+  color:#a1b7cd
+}
+
+.plan.featured .plan-label {
+  color:#67e8f9
+}
+
+.plan .button:hover {
+  border-color:#67e8f9;
+  background:#23354a
+}
+
+.plan.featured .button:hover {
+  background:#9cedfb;
+  color:#09131e
+}
+
+select option {
+  background:#121a2a;
+  color:#eef3fa
+}
+
+.contact-channels a {
+  overflow-wrap:anywhere
+}
+
+input:focus,textarea:focus,select:focus {
+  border-bottom-color:#67e8f9
+}
+
+.contact form {
+  min-width:0
+}
+
+.footer-top>p {
+  font-size:25px
+}
+
+.footer-top>p em {
+  font-family:'Space Grotesk',Arial,sans-serif;
+  letter-spacing:-.035em;
+  font-size:22px
+}
+
+.footer-socials a:hover {
+  color:#67e8f9
+}
+
+/* ADAPTACIÓN: tamaños de la ilustración para notebook. */
+@media(max-width:1100px) {
+  .editor-body {
+    font-size:10px
+  }
+
+  .dev-scene {
+    height:450px
+  }
+
+  .store-window {
+    width:64%;
+    bottom:20px
+  }
+
+  .store-product {
+    height:145px
+  }
+
+  .dev-badge {
+    left:-4px;
+    bottom:-6px;
+    padding:11px 14px
+  }
+
+  .editor-top {
+    gap:15px
+  }
+
+  .scene-caption {
+    bottom:-40px;
+    font-size:6px
+  }
+
+  .editor-window {
+    top:30px
+  }
+
+}
+
+/* ADAPTACIÓN: ilustración centrada para tablet. */
+@media(max-width:800px) {
+  .dev-scene {
+    width:100%;
+    max-width:520px;
+    justify-self:center;
+    height:480px;
+    margin-top:15px
+  }
+
+  .editor-body {
+    font-size:12px
+  }
+
+  .store-window {
+    right:0;
+    bottom:23px;
+    width:60%
+  }
+
+  .dev-badge {
+    bottom:0;
+    left:5px
+  }
+
+  .scene-caption {
+    bottom:-24px;
+    font-size:7px
+  }
+
+  .hero {
+    gap:35px
+  }
+
+  .footer-top>p em {
+    font-size:21px
+  }
+
+}
+
+/* ADAPTACIÓN: editor, tienda y título compactos para celular. */
+@media(max-width:560px) {
+  .brand-mark {
+    font-size:24px
+  }
+
+  .brand-mark span {
+    font-size:19px
+  }
+
+  .brand-sub {
+    letter-spacing:.03em
+  }
+
+  .hero h1 {
+    font-size:43px
+  }
+
+  .hero h1 em {
+    font-size:40px
+  }
+
+  .dev-scene {
+    height:440px;
+    margin-top:7px
+  }
+
+  .editor-window {
+    width:100%;
+    top:10px;
+    left:0
+  }
+
+  .editor-body {
+    font-size:10px;
+    padding:20px 12px 27px
+  }
+
+  .code-line {
+    gap:12px
+  }
+
+  .editor-top {
+    padding:12px;
+    gap:15px;
+    font-size:9px
+  }
+
+  .editor-language {
+    font-size:6px
+  }
+
+  .store-window {
+    width:65%;
+    right:0;
+    bottom:20px
+  }
+
+  .store-product {
+    height:135px
+  }
+
+  .store-header {
+    font-size:8px;
+    padding:12px
+  }
+
+  .store-product-info {
+    padding:12px;
+    gap:12px
+  }
+
+  .store-product-info h3 {
+    font-size:15px
+  }
+
+  .headphones {
+    transform:scale(.9) rotate(-12deg)
+  }
+
+  .dev-badge {
+    left:-5px;
+    bottom:3px;
+    padding:11px;
+    gap:7px
+  }
+
+  .dev-badge>span {
+    font-size:17px
+  }
+
+  .dev-badge p {
+    font-size:8px
+  }
+
+  .dev-badge strong {
+    font-size:10px
+  }
+
+  .scene-caption {
+    font-size:6px;
+    letter-spacing:0;
+    bottom:-15px
+  }
+
+  .service-strip {
+    font-size:6px;
+    letter-spacing:.05em
+  }
+
+  .header nav {
+    background:#111a2a;
+    box-shadow:0 15px 30px #0008
+  }
+
+  .footer-top>p {
+    font-size:24px
+  }
+
+}
+
+/* ADAPTACIÓN: pantallas especialmente pequeñas. */
+@media(max-width:360px) {
+  .hero h1 {
+    font-size:38px
+  }
+
+  .hero h1 em {
+    font-size:35px
+  }
+
+  .editor-body {
+    font-size:8px
+  }
+
+  .store-window {
+    width:66%
+  }
+
+  .store-product-info h3 {
+    font-size:13px
+  }
+
+  .scene-caption {
+    font-size:5px
+  }
+
+}
+
+/* Capturas reales del portfolio */
+/* CAPTURAS REALES: proporción, barra de navegador y encuadre superior sin deformar las imágenes. */
+.project-screenshot {
+  height:auto;
+  aspect-ratio:1348/960;
+  padding:0;
+  background:#121a2a;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  border:1px solid var(--line)
+}
+
+.capture-bar {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:9px 13px;
+  background:#182235;
+  flex-shrink:0;
+  color:#8492aa;
+  line-height:1
+}
+
+.capture-bar>span {
+  font-size:8px;
+  letter-spacing:3px
+}
+
+.capture-bar small {
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;
+  font-weight:400
+}
+
+.project-screenshot>img {
+  display:block;
+  width:100%;
+  height:auto;
+  min-height:0;
+  flex:1;
+  object-fit:cover;
+  object-position:top
+}
+
+/* IMAGEN AMPLIADA: muestra la captura completa en la ventana de detalle. */
+.dialog-image {
+  display:block;
+  width:100%;
+  height:auto;
+  margin:22px 0;
+  border-radius:8px;
+  border:1px solid var(--line)
+}
+
+/* FORMULARIO POR EMAIL: campo invisible antispam y estados de envío. */
+.form-honeypot {
+  display: none !important;
+}
+/* Las opciones de respaldo solo aparecen cuando hay un fallo. */
+#form-result [hidden] {
+  display: none !important;
+}
+#submit-button:disabled {
+  opacity: .65;
+  transform: none;
+  cursor: wait;
+}
+.form-result[data-state="success"] {
+  border-color: #67e8f9;
+}
+.form-result[data-state="error"] {
+  border-color: #f0a6b6;
+}

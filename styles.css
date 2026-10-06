@@ -1,0 +1,1666 @@
+/* FUENTES: Google Fonts requiere conexión; si falla se usan Arial y monospace. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* PALETA GLOBAL: --bg fondo; --ink texto principal; --muted texto secundario; --green acento cian (nombre conservado del diseño inicial); --line bordes; --deep hover; --surface tarjetas; --violet segundo acento. */
+:root {
+  --bg:#0b101b;
+  --ink:#eef3fa;
+  --muted:#a1aec0;
+  --green:#67e8f9;
+  --line:#273245;
+  --white:#fff;
+  --deep:#a5effa;
+  --surface:#121a2a;
+  --violet:#a78bfa
+}
+
+/* BASE: tamaños previsibles, desplazamiento suave, tipografías, enlaces y foco visible para teclado. */
+* {
+  box-sizing:border-box
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:95px
+}
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',Arial,sans-serif;
+  font-size:15px;
+  line-height:1.6
+}
+
+button,input,textarea,select {
+  font:inherit
+}
+
+button,a {
+  -webkit-tap-highlight-color:transparent
+}
+
+a {
+  color:inherit;
+  text-decoration:none
+}
+
+button {
+  color:inherit;
+  cursor:pointer
+}
+
+button:disabled {
+  cursor:default
+}
+
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible {
+  outline:3px solid var(--green);
+  outline-offset:5px
+}
+
+h1,h2,h3,p {
+  margin:0
+}
+
+h1,h2,h3 {
+  font-family:'Space Grotesk',Arial,sans-serif;
+  line-height:1.13;
+  letter-spacing:-.055em
+}
+
+h2 {
+  font-size:clamp(36px,4.2vw,58px);
+  font-weight:600
+}
+
+em {
+  font-family:'Space Grotesk',Arial,sans-serif;
+  font-style:normal;
+  font-weight:600;
+  letter-spacing:-.045em
+}
+
+h1 em,h2 em {
+  color:var(--green)
+}
+
+p {
+  color:var(--muted)
+}
+
+/* ACCESIBILIDAD: enlace de salto al contenido, visible al recibir foco. */
+.skip {
+  position:absolute;
+  left:20px;
+  top:-80px;
+  background:var(--green);
+  color:#0b101b;
+  padding:10px;
+  z-index:99
+}
+
+.skip:focus {
+  top:10px
+}
+
+/* ENCABEZADO: ancho máximo, logo, navegación y botón de menú. */
+.header {
+  max-width:1360px;
+  margin:auto;
+  padding:29px 60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line)
+}
+
+.brand {
+  display:flex;
+  gap:13px;
+  align-items:center;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.06em
+}
+
+.brand-mark {
+  font-family:'JetBrains Mono',monospace;
+  font-size:28px;
+  letter-spacing:-.07em;
+  line-height:1.1;
+  color:var(--green)
+}
+
+.brand-mark span {
+  color:var(--violet);
+  font-size:22px
+}
+
+.brand-sub {
+  display:block;
+  font-size:8px;
+  letter-spacing:.13em;
+  font-weight:400;
+  margin-top:2px
+}
+
+.header nav {
+  display:flex;
+  align-items:center;
+  gap:32px;
+  font-size:12px
+}
+
+.header nav>a:not(.nav-contact):hover {
+  color:var(--green)
+}
+
+.nav-contact {
+  border:1px solid var(--ink);
+  border-radius:30px;
+  padding:11px 22px
+}
+
+.nav-contact span {
+  margin-left:22px
+}
+
+.menu-toggle {
+  display:none
+}
+
+/* CONTENEDOR GENERAL: ancho máximo y espacio de las secciones. HERO: columnas de presentación e ilustración. */
+.section {
+  max-width:1360px;
+  margin:auto;
+  padding:95px 60px
+}
+
+.hero {
+  display:grid;
+  grid-template-columns:1.12fr 1fr;
+  gap:45px;
+  padding-top:76px;
+  padding-bottom:67px;
+  align-items:center;
+  min-height:720px
+}
+
+.eyebrow {
+  font-size:10px;
+  letter-spacing:.16em;
+  color:var(--ink);
+  font-weight:600;
+  margin-bottom:28px
+}
+
+.dot {
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--green);
+  margin-right:7px
+}
+
+.hero h1 {
+  font-size:clamp(45px,5.3vw,74px);
+  font-weight:600;
+  line-height:1.08
+}
+
+.hero-description {
+  max-width:420px;
+  font-size:14px;
+  margin-top:25px;
+  line-height:1.9
+}
+
+.hero-actions {
+  display:flex;
+  align-items:center;
+  gap:26px;
+  margin-top:30px
+}
+
+/* BOTONES Y ENLACES: aspecto reutilizable, hover y variante cian .dark. */
+.button {
+  display:inline-flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  padding:16px 23px;
+  border-radius:40px;
+  border:0;
+  font-size:12px;
+  font-weight:500;
+  transition:background .2s,transform .2s
+}
+
+.button:hover {
+  transform:translateY(-2px)
+}
+
+.dark {
+  background:var(--green);
+  color:#09131e;
+  font-weight:600;
+  box-shadow:0 0 24px #67e8f912
+}
+
+.dark:hover {
+  background:var(--deep)
+}
+
+.text-link {
+  font-size:12px;
+  font-weight:500;
+  border:0;
+  background:none;
+  padding:0
+}
+
+.text-link span {
+  margin-left:15px
+}
+
+.hero-note {
+  display:flex;
+  gap:15px;
+  align-items:center;
+  margin-top:48px
+}
+
+.hero-note p {
+  font-size:10px;
+  line-height:1.8
+}
+
+.hero-note strong {
+  font-weight:400;
+  color:var(--ink)
+}
+
+.asterisk {
+  font-size:42px;
+  color:var(--green)
+}
+
+/* FRANJA DE SERVICIOS: lista horizontal de tecnologías. */
+.service-strip {
+  padding:21px 40px;
+  background:#101b2b;
+  border-top:1px solid #244358;
+  border-bottom:1px solid #244358;
+  color:#9bdded;
+  display:flex;
+  justify-content:center;
+  gap:48px;
+  align-items:center;
+  font-size:9px;
+  letter-spacing:.13em;
+  font-weight:600
+}
+
+.service-strip i {
+  font-size:15px;
+  line-height:1;
+  font-style:normal
+}
+
+/* SOBRE MÍ: columnas, párrafos y etiquetas de especialidades. */
+.about {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:95px;
+  padding-top:115px;
+  padding-bottom:115px
+}
+
+.about-copy p {
+  font-size:13px;
+  line-height:1.95;
+  margin-bottom:18px
+}
+
+.about-copy .lead {
+  font-size:17px;
+  color:var(--ink);
+  line-height:1.65
+}
+
+.about-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:25px
+}
+
+.about-tags span {
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:7px 12px;
+  font-size:9px
+}
+
+/* TRABAJOS: grilla de tarjetas, títulos y flechas. Las capturas reales usan .project-screenshot en tech.css; las clases visual-boticario y visual-mar conservan la ilustración inicial, actualmente sin uso. */
+.projects {
+  border-top:1px solid var(--line);
+  padding-bottom:55px
+}
+
+.section-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:35px;
+  margin-bottom:42px
+}
+
+.section-heading>p {
+  font-size:12px;
+  line-height:1.8;
+  max-width:300px
+}
+
+.project-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px
+}
+
+.project-card {
+  padding:0;
+  border:0;
+  text-align:left;
+  background:none;
+  display:block
+}
+
+.project-visual {
+  height:330px;
+  position:relative;
+  overflow:hidden;
+  transition:transform .3s;
+  border-radius:4px
+}
+
+.project-card:hover .project-visual {
+  transform:translateY(-5px)
+}
+
+.visual-boticario {
+  background:#d4b99c
+}
+
+.visual-wordmark {
+  font-family:Georgia,serif;
+  position:absolute;
+  top:25px;
+  left:28px;
+  font-size:23px;
+  line-height:.7;
+  letter-spacing:-.06em;
+  color:#4c4639
+}
+
+.visual-wordmark i {
+  font-size:16px
+}
+
+.project-preview {
+  position:absolute;
+  top:110px;
+  left:35px;
+  color:#4c4337
+}
+
+.project-preview small {
+  font-size:7px;
+  letter-spacing:.12em;
+  display:block
+}
+
+.project-preview strong {
+  display:block;
+  font-family:Georgia,serif;
+  font-size:47px;
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.065em;
+  margin-top:10px
+}
+
+.project-preview>span {
+  display:inline-block;
+  font-size:6px;
+  letter-spacing:.06em;
+  padding:11px;
+  background:#596346;
+  color:#f6f5ef;
+  margin-top:17px
+}
+
+.project-bottle {
+  position:absolute;
+  right:65px;
+  bottom:37px;
+  background:linear-gradient(90deg,#473218,#a37537,#5e4020);
+  height:155px;
+  width:87px;
+  border-radius:9px;
+  transform:rotate(8deg);
+  box-shadow:15px 16px 18px #57412730
+}
+
+.project-bottle .cap {
+  height:38px;
+  top:-35px
+}
+
+.project-bottle>span {
+  position:absolute;
+  top:38px;
+  background:#eeead7;
+  left:6px;
+  right:6px;
+  padding:19px 0;
+  text-align:center;
+  font-family:Georgia,serif;
+  font-size:12px;
+  line-height:1.05
+}
+
+.visual-label {
+  position:absolute;
+  bottom:11px;
+  left:15px;
+  font-size:6px;
+  letter-spacing:.15em;
+  opacity:.65
+}
+
+.project-info {
+  display:flex;
+  justify-content:space-between;
+  padding:21px 0;
+  align-items:center
+}
+
+.project-type {
+  font-size:8px;
+  letter-spacing:.12em;
+  color:#9baac0
+}
+
+.project-info h3 {
+  font-size:22px;
+  font-weight:600;
+  margin:7px 0 8px;
+  letter-spacing:-.04em
+}
+
+.project-info p {
+  font-size:11px;
+  line-height:1.8
+}
+
+.project-arrow {
+  height:40px;
+  width:40px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:20px;
+  transition:background .2s
+}
+
+.project-card:hover .project-arrow {
+  background:var(--green);
+  color:#0b101b
+}
+
+.visual-mar {
+  background:#0d344b;
+  color:#eddfb3
+}
+
+.mar-brand {
+  position:absolute;
+  top:23px;
+  left:30px;
+  font-family:Georgia,serif;
+  font-size:23px;
+  line-height:.9;
+  letter-spacing:-.05em
+}
+
+.mar-brand i {
+  font-size:16px
+}
+
+.mar-preview {
+  position:absolute;
+  top:117px;
+  left:35px
+}
+
+.mar-preview small {
+  display:block;
+  font-size:7px;
+  letter-spacing:.13em
+}
+
+.mar-preview strong {
+  display:block;
+  font-family:Georgia,serif;
+  font-weight:400;
+  line-height:1.1;
+  font-size:34px;
+  letter-spacing:-.05em;
+  margin-top:13px
+}
+
+.mar-preview>span {
+  display:inline-block;
+  font-size:7px;
+  margin-top:20px;
+  padding-bottom:5px;
+  border-bottom:1px solid #e8d9ac
+}
+
+.mar-wave {
+  width:300px;
+  height:390px;
+  position:absolute;
+  right:-70px;
+  top:-26px;
+  border:1px solid #cbb67d40;
+  border-radius:50%;
+  transform:rotate(-15deg);
+  box-shadow:0 0 0 23px #cbb67d0d,0 0 0 46px #cbb67d0a,0 0 0 70px #cbb67d08
+}
+
+/* INVITACIÓN: llamada de contacto debajo del portfolio. */
+.concept-note {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  border-top:1px solid var(--line);
+  padding-top:29px;
+  margin-top:30px
+}
+
+.concept-note>span {
+  font-size:35px;
+  color:var(--green)
+}
+
+.concept-note p {
+  font-size:12px
+}
+
+.concept-note strong {
+  font-weight:400;
+  color:var(--ink)
+}
+
+.concept-note a {
+  margin-left:auto
+}
+
+/* PROCESO: cuatro columnas con los pasos de trabajo. */
+.process {
+  padding-top:60px;
+  padding-bottom:90px
+}
+
+.process-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:32px;
+  border-top:1px solid var(--line);
+  padding-top:28px
+}
+
+.process-grid article>span {
+  font-size:10px;
+  color:var(--violet)
+}
+
+.process-grid h3 {
+  font-size:16px;
+  letter-spacing:-.035em;
+  margin:22px 0 12px;
+  line-height:1.4
+}
+
+.process-grid p {
+  font-size:11px;
+  line-height:1.85
+}
+
+/* PRECIOS: fondo de sección, pestañas, tarjetas, plan destacado y aclaraciones. */
+.pricing {
+  background:#0e1523;
+  max-width:none;
+  padding-left:max(60px,calc((100vw - 1240px)/2));
+  padding-right:max(60px,calc((100vw - 1240px)/2))
+}
+
+.price-tabs {
+  display:inline-flex;
+  border:1px solid var(--line);
+  border-radius:35px;
+  padding:4px;
+  margin:0 0 35px
+}
+
+.price-tabs button {
+  padding:11px 20px;
+  border:0;
+  border-radius:30px;
+  background:transparent;
+  font-size:11px
+}
+
+.price-tabs button[aria-selected=true] {
+  background:#25334b;
+  color:var(--green)
+}
+
+.plan-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:19px
+}
+
+.plan {
+  border:1px solid var(--line);
+  background:var(--surface);
+  border-radius:6px;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  position:relative
+}
+
+.plan.featured {
+  background:linear-gradient(150deg,#192a3c,#1c203b);
+  border-color:#558699;
+  box-shadow:0 0 40px #67e8f90a
+}
+
+.plan-label {
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  margin-bottom:17px;
+  min-height:15px
+}
+
+.plan h3 {
+  font-size:25px;
+  font-weight:500;
+  margin-bottom:12px;
+  letter-spacing:-.05em
+}
+
+.plan>p {
+  font-size:11px;
+  line-height:1.8;
+  min-height:42px
+}
+
+.plan-price {
+  margin:27px 0 25px;
+  font-size:37px;
+  font-family:'Space Grotesk',Arial,sans-serif;
+  font-weight:600;
+  letter-spacing:-.05em;
+  line-height:1
+}
+
+.plan-price small {
+  font-family:'Inter',Arial;
+  font-size:9px;
+  display:block;
+  letter-spacing:0;
+  font-weight:400;
+  color:#a7b9ca;
+  margin-bottom:10px
+}
+
+.plan-price .currency {
+  font-size:15px;
+  margin-right:5px
+}
+
+.plan ul {
+  list-style:none;
+  padding:20px 0 0;
+  margin:0 0 25px;
+  border-top:1px solid #2d3e52;
+  flex:1
+}
+
+.plan li {
+  font-size:11px;
+  margin-bottom:12px;
+  padding-left:18px;
+  position:relative
+}
+
+.plan li:before {
+  content:'✓';
+  position:absolute;
+  left:0;
+  color:var(--green)
+}
+
+.plan .button {
+  width:100%;
+  font-size:11px;
+  background:transparent;
+  border:1px solid #435269;
+  color:var(--ink);
+  padding:13px 17px
+}
+
+.plan.featured .button {
+  background:var(--green);
+  color:#09131e;
+  border-color:var(--green)
+}
+
+.price-note {
+  display:flex;
+  gap:12px;
+  margin:24px 0
+}
+
+.price-note>span {
+  font-size:24px;
+  line-height:1.2;
+  color:var(--green)
+}
+
+.price-note p {
+  font-size:10px;
+  max-width:800px;
+  line-height:1.85
+}
+
+/* DESPLEGABLE DE PRECIOS: aspecto del componente details y su indicador al abrirse. */
+.pricing-faq {
+  border-top:1px solid var(--line);
+  padding-top:20px;
+  max-width:800px;
+  font-size:12px
+}
+
+.pricing-faq summary {
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  justify-content:space-between
+}
+
+.pricing-faq summary::-webkit-details-marker {
+  display:none
+}
+
+.pricing-faq summary span {
+  font-size:21px;
+  line-height:1
+}
+
+.pricing-faq[open] summary span {
+  transform:rotate(45deg)
+}
+
+.pricing-faq p {
+  margin-top:15px;
+  font-size:11px;
+  line-height:1.9
+}
+
+/* CONTACTO: disposición en columnas, ubicación y enlaces de canales. */
+.contact {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:100px;
+  padding-top:105px;
+  padding-bottom:105px
+}
+
+.contact-copy>p:not(.eyebrow) {
+  font-size:13px;
+  line-height:1.9;
+  margin-top:27px
+}
+
+.contact-location {
+  display:flex;
+  gap:15px;
+  margin-top:45px;
+  align-items:center
+}
+
+.contact-location>span {
+  font-size:27px;
+  color:var(--violet)
+}
+
+.contact-location p {
+  font-size:10px;
+  line-height:1.9
+}
+
+.contact-channels {
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:25px
+}
+
+.contact-channels:empty {
+  display:none
+}
+
+.contact-channels a {
+  border-bottom:1px solid #455871;
+  font-size:13px;
+  padding-bottom:6px
+}
+
+/* FORMULARIO: etiquetas, campos, placeholders y resumen de consulta. */
+form label {
+  font-size:10px;
+  font-weight:500;
+  display:block;
+  margin-bottom:22px
+}
+
+.form-row {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:23px
+}
+
+input,select,textarea {
+  display:block;
+  width:100%;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid #435269;
+  color:var(--ink);
+  padding:12px 0;
+  border-radius:0;
+  font-size:12px;
+  font-weight:400
+}
+
+textarea {
+  resize:vertical
+}
+
+input::placeholder,textarea::placeholder {
+  color:#8493a9
+}
+
+select {
+  min-height:44px
+}
+
+form .button {
+  margin-top:2px
+}
+
+.form-hint {
+  font-size:9px;
+  margin-top:14px;
+  line-height:1.7
+}
+
+.form-result {
+  border:1px solid var(--line);
+  padding:16px;
+  margin-top:20px;
+  border-radius:6px
+}
+
+.form-result p {
+  font-size:11px;
+  margin-bottom:8px;
+  color:var(--ink)
+}
+
+.result-actions {
+  display:flex;
+  gap:18px;
+  margin-top:15px
+}
+
+/* PIE DE PÁGINA: marca, navegación, redes y créditos. */
+footer {
+  background:#070c14;
+  color:var(--ink);
+  padding:50px max(60px,calc((100vw - 1240px)/2)) 20px
+}
+
+.footer-top {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  align-items:start;
+  padding-bottom:45px;
+  gap:35px
+}
+
+.footer-brand {
+  font-family:'Space Grotesk',Arial,sans-serif;
+  font-size:23px;
+  letter-spacing:-.05em
+}
+
+.footer-brand span {
+  display:block;
+  font-family:'Inter',Arial;
+  font-size:10px;
+  letter-spacing:0;
+  color:#96a3b7;
+  margin-top:6px
+}
+
+.footer-top>p {
+  font-family:'Space Grotesk',Arial;
+  font-size:28px;
+  color:var(--ink);
+  letter-spacing:-.05em;
+  line-height:1.2
+}
+
+.footer-top>p em {
+  color:var(--green)
+}
+
+.footer-socials {
+  display:flex;
+  flex-direction:column;
+  align-items:end;
+  gap:9px;
+  font-size:11px;
+  color:#bdc8da
+}
+
+.footer-bottom {
+  border-top:1px solid var(--line);
+  padding-top:19px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:#96a3b7;
+  font-size:8px
+}
+
+.footer-bottom a {
+  color:#c4d0e0
+}
+
+/* VENTANA MODAL: tamaño, fondo, capa oscura, cierre y contenido. */
+dialog {
+  max-width:650px;
+  width:calc(100% - 32px);
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--bg);
+  padding:45px;
+  color:var(--ink)
+}
+
+dialog::backdrop {
+  background:#17211890;
+  backdrop-filter:blur(4px)
+}
+
+dialog h2 {
+  font-size:40px;
+  margin-bottom:22px
+}
+
+dialog>p:not(.eyebrow) {
+  font-size:13px;
+  line-height:1.9
+}
+
+dialog ul {
+  padding-left:18px;
+  font-size:12px;
+  line-height:2;
+  margin:23px 0
+}
+
+.dialog-close {
+  position:absolute;
+  right:15px;
+  top:12px;
+  background:none;
+  border:0;
+  font-size:20px;
+  padding:6px
+}
+
+dialog .eyebrow {
+  margin-bottom:15px
+}
+
+dialog .button {
+  margin-top:4px
+}
+
+/* PANTALLAS GRANDES: mantiene el contenido centrado. */
+@media(min-width:1600px) {
+  .pricing,footer {
+    padding-left:calc((100vw - 1240px)/2);
+    padding-right:calc((100vw - 1240px)/2)
+  }
+
+}
+
+/* NOTEBOOKS: reduce márgenes y ajusta tamaños. */
+@media(max-width:1100px) {
+  .header {
+    padding:24px 35px
+  }
+
+  .section {
+    padding-left:35px;
+    padding-right:35px
+  }
+
+  .hero {
+    gap:25px;
+    min-height:660px
+  }
+
+  .hero h1 {
+    font-size:59px
+  }
+
+  .hero-art {
+    height:450px
+  }
+
+  .hero-browser {
+    top:135px
+  }
+
+  .store-body {
+    padding:20px;
+    min-height:215px
+  }
+
+  .store-body h2 {
+    font-size:29px
+  }
+
+  .bottle-scene {
+    transform:scale(.85);
+    transform-origin:bottom left
+  }
+
+  .service-strip {
+    gap:25px;
+    font-size:8px
+  }
+
+  .about,.contact {
+    gap:50px
+  }
+
+  .project-bottle {
+    right:40px;
+    transform:scale(.8) rotate(8deg);
+    transform-origin:bottom
+  }
+
+  .project-preview strong {
+    font-size:40px
+  }
+
+  .pricing,footer {
+    padding-left:35px;
+    padding-right:35px
+  }
+
+  .plan {
+    padding:23px
+  }
+
+  .plan-price {
+    font-size:31px
+  }
+
+}
+
+/* TABLETS: apila secciones y planes; el proceso pasa a dos columnas. */
+@media(max-width:800px) {
+  .header {
+    padding:20px 24px
+  }
+
+  .header nav {
+    gap:20px
+  }
+
+  .hero {
+    grid-template-columns:1fr;
+    padding-top:55px;
+    padding-bottom:65px;
+    gap:35px
+  }
+
+  .hero h1 {
+    font-size:clamp(45px,8vw,70px)
+  }
+
+  .hero-art {
+    width:90%;
+    max-width:480px;
+    height:445px;
+    justify-self:center;
+    margin-top:10px
+  }
+
+  .hero-browser {
+    top:115px;
+    width:102%;
+    left:-1%
+  }
+
+  .art-sticker {
+    bottom:10px
+  }
+
+  .hero-note {
+    margin-top:30px
+  }
+
+  .section {
+    padding-left:24px;
+    padding-right:24px
+  }
+
+  .service-strip {
+    flex-wrap:wrap;
+    gap:14px 22px;
+    padding:20px 24px
+  }
+
+  .service-strip i:last-of-type {
+    display:none
+  }
+
+  .about {
+    grid-template-columns:1fr;
+    gap:35px;
+    padding-top:65px;
+    padding-bottom:65px
+  }
+
+  .section-heading {
+    align-items:start
+  }
+
+  .section-heading>p {
+    max-width:180px
+  }
+
+  .project-visual {
+    height:285px
+  }
+
+  .project-preview {
+    top:105px;
+    left:24px
+  }
+
+  .project-preview strong {
+    font-size:34px
+  }
+
+  .project-bottle {
+    right:10px;
+    transform:scale(.7) rotate(8deg)
+  }
+
+  .mar-preview {
+    left:23px;
+    top:105px
+  }
+
+  .mar-preview strong {
+    font-size:28px
+  }
+
+  .visual-wordmark,.mar-brand {
+    left:24px
+  }
+
+  .project-info h3 {
+    font-size:19px
+  }
+
+  .project-info p {
+    font-size:10px
+  }
+
+  .project-arrow {
+    width:33px;
+    height:33px
+  }
+
+  .process-grid {
+    grid-template-columns:1fr 1fr;
+    gap:30px
+  }
+
+  .pricing,footer {
+    padding-left:24px;
+    padding-right:24px
+  }
+
+  .plan-grid {
+    grid-template-columns:1fr
+  }
+
+  .plan {
+    padding:25px
+  }
+
+  .plan>p {
+    min-height:0
+  }
+
+  .plan-price {
+    font-size:36px;
+    margin:22px 0
+  }
+
+  .plan ul {
+    margin-bottom:15px
+  }
+
+  .contact {
+    grid-template-columns:1fr;
+    gap:40px;
+    padding-top:65px;
+    padding-bottom:65px
+  }
+
+  .contact-location {
+    margin-top:25px
+  }
+
+  .footer-top {
+    grid-template-columns:1fr 1fr
+  }
+
+  .footer-socials {
+    grid-column:1/-1;
+    flex-direction:row;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:22px
+  }
+
+  .footer-top>p {
+    justify-self:end
+  }
+
+}
+
+/* CELULARES: menú desplegable, trabajos en una columna y formulario apilado. */
+@media(max-width:560px) {
+  html {
+    scroll-padding-top:25px
+  }
+
+  .header {
+    position:relative
+  }
+
+  .brand {
+    font-size:10px;
+    gap:10px
+  }
+
+  .brand-sub {
+    font-size:7px
+  }
+
+  .brand-mark {
+    font-size:31px
+  }
+
+  .menu-toggle {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid var(--line);
+    background:none;
+    padding:8px 13px;
+    border-radius:25px;
+    font-size:10px
+  }
+
+  .menu-toggle span {
+    font-size:15px
+  }
+
+  .header nav {
+    display:none;
+    position:absolute;
+    top:79px;
+    left:15px;
+    right:15px;
+    background:var(--bg);
+    box-shadow:0 15px 30px #23331e20;
+    padding:20px;
+    z-index:5;
+    flex-direction:column;
+    align-items:stretch;
+    border:1px solid var(--line);
+    border-radius:7px;
+    gap:17px
+  }
+
+  .header nav.open {
+    display:flex
+  }
+
+  .nav-contact {
+    display:flex;
+    justify-content:space-between
+  }
+
+  .hero {
+    padding-top:44px
+  }
+
+  .hero h1 {
+    font-size:46px
+  }
+
+  .hero .eyebrow {
+    font-size:8px;
+    margin-bottom:23px
+  }
+
+  .hero-description {
+    font-size:12px;
+    margin-top:22px
+  }
+
+  .hero-actions {
+    gap:20px
+  }
+
+  .button {
+    padding:14px 18px;
+    font-size:11px;
+    gap:20px
+  }
+
+  .text-link {
+    font-size:11px
+  }
+
+  .hero-art {
+    width:94%;
+    height:380px;
+    border-radius:130px 130px 12px 12px
+  }
+
+  .art-caption {
+    font-size:8px;
+    top:30px
+  }
+
+  .hero-browser {
+    top:110px
+  }
+
+  .mini-nav {
+    padding:12px 17px
+  }
+
+  .store-body {
+    min-height:170px;
+    padding:16px 18px 20px
+  }
+
+  .store-body h2 {
+    font-size:27px
+  }
+
+  .store-body small {
+    font-size:4px
+  }
+
+  .store-body p {
+    font-size:6px;
+    margin-top:9px
+  }
+
+  .mini-button {
+    margin-top:10px;
+    padding:7px 10px
+  }
+
+  .bottle-scene {
+    height:135px;
+    transform:scale(.66);
+    transform-origin:bottom left
+  }
+
+  .mini-collection {
+    padding:12px 18px;
+    font-size:7px
+  }
+
+  .art-sticker {
+    width:90px;
+    height:90px;
+    right:-11px;
+    bottom:12px;
+    font-size:7px
+  }
+
+  .art-sticker b {
+    font-size:8px
+  }
+
+  .art-sticker span {
+    font-size:23px
+  }
+
+  .art-footnote {
+    font-size:7px
+  }
+
+  .service-strip {
+    justify-content:space-around;
+    font-size:7px;
+    gap:10px
+  }
+
+  .service-strip i {
+    display:none
+  }
+
+  .section {
+    padding-top:60px;
+    padding-bottom:60px
+  }
+
+  .hero {
+    padding-top:44px
+  }
+
+  .about-copy .lead {
+    font-size:16px
+  }
+
+  .about-copy p {
+    font-size:12px
+  }
+
+  .section-heading {
+    flex-direction:column;
+    gap:22px;
+    margin-bottom:30px
+  }
+
+  .section-heading>p {
+    max-width:none;
+    font-size:11px
+  }
+
+  .project-grid {
+    grid-template-columns:1fr;
+    gap:25px
+  }
+
+  .project-visual {
+    height:310px
+  }
+
+  .project-preview strong {
+    font-size:44px
+  }
+
+  .project-bottle {
+    right:40px;
+    transform:scale(.9) rotate(8deg)
+  }
+
+  .project-preview {
+    top:113px;
+    left:30px
+  }
+
+  .mar-preview {
+    left:30px;
+    top:108px
+  }
+
+  .mar-preview strong {
+    font-size:34px
+  }
+
+  .project-info h3 {
+    font-size:22px
+  }
+
+  .concept-note {
+    gap:12px;
+    flex-wrap:wrap
+  }
+
+  .concept-note a {
+    width:100%;
+    margin-left:48px
+  }
+
+  .process-grid {
+    gap:25px 23px
+  }
+
+  .process-grid h3 {
+    font-size:15px;
+    margin-top:16px
+  }
+
+  .process-grid p {
+    font-size:10px
+  }
+
+  .price-tabs {
+    display:flex;
+    width:100%
+  }
+
+  .price-tabs button {
+    flex:1;
+    padding:11px 10px;
+    font-size:10px
+  }
+
+  .pricing-faq {
+    font-size:11px
+  }
+
+  .form-row {
+    grid-template-columns:1fr;
+    gap:0
+  }
+
+  .contact {
+    gap:32px
+  }
+
+  .footer-top {
+    grid-template-columns:1fr;
+    gap:24px
+  }
+
+  .footer-top>p {
+    justify-self:start;
+    font-size:26px
+  }
+
+  .footer-socials {
+    grid-column:auto;
+    gap:16px;
+    font-size:10px
+  }
+
+  .footer-bottom {
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:8px
+  }
+
+  .footer-bottom>span:nth-child(2) {
+    display:none
+  }
+
+  dialog {
+    padding:35px 25px
+  }
+
+  dialog h2 {
+    font-size:32px
+  }
+
+  .result-actions {
+    flex-wrap:wrap
+  }
+
+}
+
+/* ACCESIBILIDAD: respeta la preferencia del usuario de reducir animaciones. */
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior:auto
+  }
+
+  *,*:before,*:after {
+    animation:none!important;
+    transition:none!important
+  }
+
+}
